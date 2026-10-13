@@ -1,0 +1,33 @@
+@startuml
+actor Solicitante
+participant Navegador
+participant "API Node.js" as API
+database MySQL
+actor Doador
+
+Solicitante -> Navegador: Seleciona uma doação
+Solicitante -> Navegador: Informa mensagem
+Navegador -> API: POST /api/solicitacoes\nJWT + donationId + mensagem
+API -> API: Valida JWT
+API -> MySQL: Consulta doação e proprietário
+MySQL --> API: Doação disponível
+API -> MySQL: INSERT donation_requests
+MySQL --> API: Solicitação criada
+API --> Navegador: HTTP 201
+Navegador --> Solicitante: Confirma envio
+
+Doador -> Navegador: Abre o painel
+Navegador -> API: GET /api/solicitacoes/recebidas
+API -> MySQL: Consulta solicitações
+MySQL --> API: Lista de solicitações
+API --> Navegador: JSON
+
+Doador -> Navegador: Aceita solicitação
+Navegador -> API: PATCH /api/solicitacoes/:id
+API -> MySQL: Inicia transação
+API -> MySQL: Marca solicitação como ACEITA
+API -> MySQL: Marca doação como RESERVADA
+API -> MySQL: Recusa demais solicitações pendentes
+API -> MySQL: Confirma transação
+API --> Navegador: Solicitação atualizada
+@enduml

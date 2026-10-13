@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publicar doação - DoaAqui</title>
+  <link rel="icon" href="/images/favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/api.js" defer></script>
+  <script src="/js/publicar.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <nav class="container nav">
+      <a class="brand" href="/">
+        <img class="brand-icon" src="/images/favicon.png" alt="">
+        Doa<span>Aqui</span>
+      </a>
+      <a href="/painel.html">Meu painel</a>
+      <button class="btn small secondary" data-logout>Sair</button>
+    </nav>
+  </header>
+
+  <main class="form-page">
+    <div class="container">
+      <form class="form-panel" id="donation-form">
+        <h1>Publicar doação</h1>
+        <p class="muted">Informe o que deseja compartilhar.</p>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="type">Tipo</label>
+            <select id="type" name="type" required>
+              <option value="BEM">Bem</option>
+              <option value="SERVICO">Serviço</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="category">Categoria</label>
+            <input
+              id="category"
+              name="category"
+              placeholder="Ex.: roupas, educação"
+              required
+            >
+          </div>
+
+          <div class="field full">
+            <label for="title">Título</label>
+            <input id="title" name="title" maxlength="120" required>
+          </div>
+
+          <div class="field full">
+            <label for="description">Descrição</label>
+            <textarea
+              id="description"
+              name="description"
+              required
+            ></textarea>
+          </div>
+
+          <div class="field">
+            <label for="city">Cidade</label>
+            <input id="city" name="city" required>
+          </div>
+
+          <div class="field">
+            <label for="state">UF</label>
+            <input id="state" name="state" maxlength="2" required>
+          </div>
+
+          <div class="field">
+            <label for="deliveryMethod">Forma de entrega</label>
+            <select id="deliveryMethod" name="deliveryMethod">
+              <option value="COMBINAR">A combinar</option>
+              <option value="RETIRADA">Retirada</option>
+              <option value="ENTREGA">Entrega</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="imageUrl">URL de uma imagem</label>
+            <input id="imageUrl" name="imageUrl" type="url">
+          </div>
+
+          <button class="btn green" type="submit">Publicar doação</button>
+        </div>
+
+        <div class="feedback" id="feedback" aria-live="polite"></div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

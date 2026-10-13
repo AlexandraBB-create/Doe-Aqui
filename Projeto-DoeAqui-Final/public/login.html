@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar - DoaAqui</title>
+  <link rel="icon" href="/images/favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/api.js" defer></script>
+  <script src="/js/auth.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <nav class="container nav">
+      <a class="brand" href="/">
+        <img class="brand-icon" src="/images/favicon.png" alt="">
+        Doa<span>Aqui</span>
+      </a>
+      <a href="/cadastro.html">Criar conta</a>
+    </nav>
+  </header>
+
+  <main class="form-page">
+    <div class="container">
+      <form class="form-panel" data-mode="login">
+        <h1>Entrar</h1>
+        <p class="muted">Acesse sua conta para doar ou solicitar ajuda.</p>
+
+        <div class="form-grid">
+          <div class="field full">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+
+          <div class="field full">
+            <label for="password">Senha</label>
+            <input id="password" name="password" type="password" required>
+          </div>
+
+          <button class="btn green" type="submit">Entrar</button>
+        </div>
+
+        <div class="feedback" id="feedback" aria-live="polite"></div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

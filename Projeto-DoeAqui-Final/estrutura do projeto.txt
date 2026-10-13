@@ -1,0 +1,31 @@
+doaaqui/
+├── package.json
+├── .env.example
+├── database.sql
+├── server.js
+├── middleware/
+│   └── auth.js
+├── routes/
+│   ├── auth.js
+│   ├── donations.js
+│   └── requests.js
+├── public/
+│   ├── index.html
+│   ├── login.html
+│   ├── cadastro.html
+│   ├── publicar.html
+│   ├── painel.html
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   ├── api.js
+│   │   ├── index.js
+│   │   ├── auth.js
+│   │   ├── publicar.js
+│   │   └── painel.js
+│   └── images/
+│       └── favicon.png
+└── uml/
+    ├── casos-de-uso.puml
+    ├── classes.puml
+    └── sequencia-solicitacao.puml

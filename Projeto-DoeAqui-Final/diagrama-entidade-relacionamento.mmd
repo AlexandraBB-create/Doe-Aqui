@@ -1,0 +1,39 @@
+erDiagram
+    USERS ||--o{ DONATIONS : publica
+    USERS ||--o{ DONATION_REQUESTS : solicita
+    DONATIONS ||--o{ DONATION_REQUESTS : recebe
+
+    USERS {
+        int id PK
+        varchar name
+        varchar email UK
+        varchar password_hash
+        varchar phone
+        varchar city
+        char state
+        timestamp created_at
+    }
+
+    DONATIONS {
+        int id PK
+        int owner_id FK
+        enum type
+        varchar title
+        text description
+        varchar category
+        varchar city
+        char state
+        varchar image_url
+        enum delivery_method
+        enum status
+        timestamp created_at
+    }
+
+    DONATION_REQUESTS {
+        int id PK
+        int donation_id FK
+        int requester_id FK
+        varchar message
+        enum status
+        timestamp created_at
+    }

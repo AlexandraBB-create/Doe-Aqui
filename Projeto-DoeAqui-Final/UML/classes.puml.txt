@@ -1,0 +1,72 @@
+@startuml
+
+class Usuario {
+  +id: int
+  +nome: string
+  +email: string
+  +senhaHash: string
+  +telefone: string
+  +cidade: string
+  +estado: string
+  +criadoEm: datetime
+}
+
+class Doacao {
+  +id: int
+  +tipo: TipoDoacao
+  +titulo: string
+  +descricao: text
+  +categoria: string
+  +cidade: string
+  +estado: string
+  +urlImagem: string
+  +formaEntrega: FormaEntrega
+  +status: StatusDoacao
+  +criadaEm: datetime
+  +alterarStatus()
+}
+
+class Solicitacao {
+  +id: int
+  +mensagem: string
+  +status: StatusSolicitacao
+  +criadaEm: datetime
+  +aceitar()
+  +recusar()
+}
+
+enum TipoDoacao {
+  BEM
+  SERVICO
+}
+
+enum FormaEntrega {
+  RETIRADA
+  ENTREGA
+  COMBINAR
+}
+
+enum StatusDoacao {
+  DISPONIVEL
+  RESERVADA
+  CONCLUIDA
+  CANCELADA
+}
+
+enum StatusSolicitacao {
+  PENDENTE
+  ACEITA
+  RECUSADA
+  CANCELADA
+}
+
+Usuario "1" -- "0..*" Doacao : publica >
+Usuario "1" -- "0..*" Solicitacao : solicita >
+Doacao "1" *-- "0..*" Solicitacao : recebe >
+
+Doacao --> TipoDoacao
+Doacao --> FormaEntrega
+Doacao --> StatusDoacao
+Solicitacao --> StatusSolicitacao
+
+@enduml

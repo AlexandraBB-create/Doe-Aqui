@@ -1,0 +1,42 @@
+@startuml
+left to right direction
+
+actor Visitante
+actor Usuario
+actor Doador
+actor Solicitante
+
+Usuario <|-- Doador
+Usuario <|-- Solicitante
+
+rectangle DoaAqui {
+  usecase "Consultar doações" as UC1
+  usecase "Pesquisar e filtrar" as UC2
+  usecase "Criar conta" as UC3
+  usecase "Autenticar-se" as UC4
+  usecase "Publicar bem ou serviço" as UC5
+  usecase "Gerenciar publicação" as UC6
+  usecase "Solicitar doação" as UC7
+  usecase "Consultar solicitações" as UC8
+  usecase "Aceitar ou recusar\nsolicitação" as UC9
+  usecase "Concluir doação" as UC10
+}
+
+Visitante --> UC1
+Visitante --> UC2
+Visitante --> UC3
+Usuario --> UC4
+Doador --> UC5
+Doador --> UC6
+Doador --> UC8
+Doador --> UC9
+Doador --> UC10
+Solicitante --> UC7
+Solicitante --> UC8
+
+UC2 .> UC1 : <<extend>>
+UC5 .> UC4 : <<include>>
+UC6 .> UC4 : <<include>>
+UC7 .> UC4 : <<include>>
+UC9 .> UC8 : <<extend>>
+@enduml

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Plataforma comunitária de doações de bens e serviços."
+  >
+  <title>DoaAqui - Doar é conectar pessoas</title>
+  <link rel="icon" href="/images/favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/api.js" defer></script>
+  <script src="/js/index.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <nav class="container nav">
+      <a class="brand" href="/">
+        <img
+          class="brand-icon"
+          src="/images/favicon.png"
+          alt=""
+        >
+        Doa<span>Aqui</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#doacoes">Doações</a>
+        <a href="/publicar.html" data-auth-only hidden>Publicar</a>
+        <a href="/painel.html" data-auth-only hidden>Painel</a>
+        <a href="/login.html" data-guest-only>Entrar</a>
+        <a class="btn small" href="/cadastro.html" data-guest-only>
+          Criar conta
+        </a>
+        <button class="btn small secondary" data-auth-only data-logout hidden>
+          Sair
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Solidariedade que aproxima</p>
+          <h1>Doe bens, compartilhe talentos e transforme vidas.</h1>
+          <p>
+            Encontre pessoas da sua comunidade para doar ou receber
+            roupas, móveis, alimentos, aulas, reparos e outros serviços.
+          </p>
+          <div class="actions">
+            <a class="btn green" href="/publicar.html">Quero doar</a>
+            <a class="btn secondary" href="#doacoes">
+              Encontrar doações
+            </a>
+          </div>
+        </div>
+
+        <img
+          class="hero-icon"
+          src="/images/favicon.png"
+          alt="Mãos formando um coração colorido"
+        >
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Como funciona</h2>
+          <p>Uma ponte simples e segura entre quem oferece e quem precisa.</p>
+        </div>
+
+        <div class="features">
+          <article class="feature">
+            <div class="feature-symbol">1</div>
+            <h3>Publique</h3>
+            <p>Cadastre um bem ou serviço disponível para doação.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-symbol">2</div>
+            <h3>Conecte-se</h3>
+            <p>Receba solicitações ou encontre uma doação próxima.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-symbol">3</div>
+            <h3>Combine</h3>
+            <p>Escolha a solicitação e combine a entrega com segurança.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="doacoes">
+      <div class="container">
+        <div class="section-title">
+          <h2>Doações disponíveis</h2>
+          <p>Pesquise bens e serviços oferecidos pela comunidade.</p>
+        </div>
+
+        <form class="filters" id="search-form">
+          <input
+            name="search"
+            type="search"
+            placeholder="O que você procura?"
+          >
+
+          <select name="type">
+            <option value="">Bens e serviços</option>
+            <option value="BEM">Somente bens</option>
+            <option value="SERVICO">Somente serviços</option>
+          </select>
+
+          <input name="category" placeholder="Categoria">
+          <input name="city" placeholder="Cidade">
+
+          <button class="btn" type="submit">Buscar</button>
+        </form>
+
+        <div class="cards" id="donations"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <strong>DoaAqui</strong> - Doar é conectar pessoas e transformar vidas.
+    </div>
+  </footer>
+</body>
+</html>

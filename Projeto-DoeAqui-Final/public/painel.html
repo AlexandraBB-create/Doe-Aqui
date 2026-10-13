@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel - DoaAqui</title>
+  <link rel="icon" href="/images/favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/api.js" defer></script>
+  <script src="/js/painel.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <nav class="container nav">
+      <a class="brand" href="/">
+        <img class="brand-icon" src="/images/favicon.png" alt="">
+        Doa<span>Aqui</span>
+      </a>
+      <a class="btn small green" href="/publicar.html">
+        Nova doação
+      </a>
+      <button class="btn small secondary" data-logout>Sair</button>
+    </nav>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="section-title">
+        <h1>Meu painel</h1>
+        <p>Gerencie suas doações e solicitações.</p>
+      </div>
+
+      <div class="dashboard-grid">
+        <section class="panel">
+          <h2>Minhas doações</h2>
+          <div id="my-donations"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Solicitações recebidas</h2>
+          <div id="received-requests"></div>
+        </section>
+
+        <section class="panel full">
+          <h2>Solicitações enviadas</h2>
+          <div id="sent-requests"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

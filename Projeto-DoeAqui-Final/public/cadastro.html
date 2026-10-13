@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Criar conta - DoaAqui</title>
+  <link rel="icon" href="/images/favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/api.js" defer></script>
+  <script src="/js/auth.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <nav class="container nav">
+      <a class="brand" href="/">
+        <img class="brand-icon" src="/images/favicon.png" alt="">
+        Doa<span>Aqui</span>
+      </a>
+      <a href="/login.html">Já tenho conta</a>
+    </nav>
+  </header>
+
+  <main class="form-page">
+    <div class="container">
+      <form class="form-panel" data-mode="cadastro">
+        <h1>Criar conta</h1>
+        <p class="muted">Faça parte desta rede de solidariedade.</p>
+
+        <div class="form-grid">
+          <div class="field full">
+            <label for="name">Nome</label>
+            <input id="name" name="name" maxlength="100" required>
+          </div>
+
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+
+          <div class="field">
+            <label for="phone">Telefone</label>
+            <input id="phone" name="phone" maxlength="30">
+          </div>
+
+          <div class="field">
+            <label for="city">Cidade</label>
+            <input id="city" name="city" required>
+          </div>
+
+          <div class="field">
+            <label for="state">UF</label>
+            <input id="state" name="state" maxlength="2" required>
+          </div>
+
+          <div class="field full">
+            <label for="password">Senha</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              minlength="6"
+              required
+            >
+          </div>
+
+          <button class="btn green" type="submit">Criar conta</button>
+        </div>
+
+        <div class="feedback" id="feedback" aria-live="polite"></div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
