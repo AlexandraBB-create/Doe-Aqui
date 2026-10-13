@@ -34,7 +34,7 @@ const pool = mysql.createPool({
   connectionLimit: 10,
   charset: "utf8mb4"
 });
-
+const app = express();
 app.locals.db = pool;
 
 app.use(cors());
